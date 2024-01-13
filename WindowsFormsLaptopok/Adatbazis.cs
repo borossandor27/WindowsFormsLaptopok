@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace WindowsFormsLaptopok
@@ -32,7 +33,21 @@ namespace WindowsFormsLaptopok
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                string uzenet = Environment.NewLine + Environment.NewLine + "A program leáll!";
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Nem sikerült kapcsolódni az adatbázishoz!" + uzenet);
+                        break;
+                    case 1045:
+                        Console.WriteLine("Hibás felhasználónév vagy jelszó!" + uzenet);
+                        break;
+                    default:
+                        Console.WriteLine(ex.Message + uzenet);
+                        break;
+                }
+                Console.ReadLine();
+                Environment.Exit(0);
             }
             finally
             {
@@ -60,13 +75,13 @@ namespace WindowsFormsLaptopok
             try
             {
                 kapcsolatnyit();
-                sql.CommandText = "SELECT * FROM laptopok";
+                sql.CommandText = "SELECT * FROM `laptop` WHERE 1 ORDER BY `marka`";
                 MySqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
-                    ulong laptopId = (ulong)reader["laptopId"];
+                    ulong laptopId = reader.GetUInt64("laptopId");
                     string marka = reader["marka"].ToString();
-                    string modell = reader["modell"].ToString();
+                    string modell = reader["model"].ToString();
                     string szin = reader["szin"].ToString();
                     string processzor = reader["processzor"].ToString();
                     int memoria = (int)reader["memoria"];

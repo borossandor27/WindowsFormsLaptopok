@@ -45,7 +45,7 @@ namespace WindowsFormsLaptopok
         }
         override public string ToString()
         {
-            return $"{Marka} {Modell}";
+            return $"{Marka} {Modell} ({this.ar})";
         }
     }
 }

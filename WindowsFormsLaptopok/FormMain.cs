@@ -6,22 +6,63 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsLaptopok;
+using System.Linq;
 
 namespace WindowsFormsLaptopok
 {
     public partial class FormMain : Form
     {
         public Dictionary<string, double> rates = new Dictionary<string, double>();
+        string[] gyartok = Program.laptopok.Select(x => x.Marka).Distinct().ToArray();
         public string baseCurrency { get; set; } = "EUR";
         public FormMain()
         {
             InitializeComponent();
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private async void FormMain_Load(object sender, EventArgs e)
         {
             await getAllRates(); // a getAllRates() metódus segítségével feltöltjük a rates Dictionary-t
+            //-- a gyártók listájának feltöltése a panel_gyartok conatiner-be
+            foreach (string gyarto in gyartok)
+            {
+                CheckBox cb = new CheckBox();
+                cb.Text = gyarto;
+                cb.AutoSize = true;
+                cb.Location = new System.Drawing.Point(10, 10 + panel_Gyartok.Controls.Count * 20);
+                cb.CheckedChanged += new EventHandler(cb_CheckedChanged);
+                panel_Gyartok.Controls.Add(cb);
+            }
+            updateLaptopListBox();
         }
+
+        private void updateLaptopListBox()
+        {
+            listBox_Laptopok.Items.Clear();
+            List<string> kivalasztottGyartok = new List<string>();
+            foreach (CheckBox cb in panel_Gyartok.Controls)
+            {
+                if (cb.Checked)
+                {
+                    kivalasztottGyartok.Add(cb.Text);
+                }
+            }
+            foreach (Laptop laptop in Program.laptopok)
+            {
+                if (kivalasztottGyartok.Contains(laptop.Marka))
+                {
+                    listBox_Laptopok.Items.Add(laptop);
+                }
+                
+            }
+        }
+
+        private void cb_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            updateLaptopListBox();
+        }
+
         async Task getAllRates()
         {
             Task getCurrencyRates = getCurrencyRatesAsync(); //-- létrehozunk egy új Task-ot, hogy a szinkron műveletet tovább tudjuk futtatni 
@@ -60,5 +101,22 @@ namespace WindowsFormsLaptopok
             Task.Delay(1000).Wait();
         }
 
+        private void újToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("add");
+            formLaptopAdatok.ShowDialog();
+        }
+
+        private void módosítToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("edit");
+            formLaptopAdatok.ShowDialog();
+        }
+
+        private void törölToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("delete");
+            formLaptopAdatok.ShowDialog();
+        }
     }
 }
