@@ -103,5 +103,59 @@ namespace WindowsFormsLaptopok
             }
             return laptopok;
         }
+        public void addLaptop(Laptop laptop)
+        {
+            try
+            {
+                kapcsolatnyit();
+                sql.CommandText = "INSERT INTO `laptop` (`marka`, `model`, `szin`, `processzor`, `memoria`, `kepernyomeret`, `felbontas`, `merevlemezkapacitas`, `ar`) VALUES (@marka, @model, @szin, @processzor, @memoria, @kepernyomeret, @felbontas, @merevlemezkapacitas, @ar)";
+                sql.Parameters.AddWithValue("@marka", laptop.Marka);
+                sql.Parameters.AddWithValue("@model", laptop.Modell);
+                sql.Parameters.AddWithValue("@szin", laptop.Szin);
+                sql.Parameters.AddWithValue("@processzor", laptop.Processzor);
+                sql.Parameters.AddWithValue("@memoria", laptop.Memoria);
+                sql.Parameters.AddWithValue("@kepernyomeret", laptop.Kepernyomeret);
+                sql.Parameters.AddWithValue("@felbontas", laptop.Felbontas);
+                sql.Parameters.AddWithValue("@merevlemezkapacitas", laptop.Merevlemezkapacitas);
+                sql.Parameters.AddWithValue("@ar", laptop.Ar);
+                sql.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                kapcsolatcsuk();
+            }
+        }
+
+        internal void updateLaptop(Laptop laptop)
+        {
+            try
+            {
+                kapcsolatnyit();
+                sql.CommandText = "UPDATE `laptop` SET `marka`=@marka,`model`=@model,`szin`=@szin,`processzor`=@processzor,`memoria`=@memoria,`kepernyomeret`=@kepernyomeret,`felbontas`=@felbontas,`merevlemezkapacitas`=@merevlemezkapacitas,`ar`=@ar WHERE `laptopId`=@laptopid";
+sql.Parameters.AddWithValue("@laptopid", laptop.LaptopId);
+                sql.Parameters.AddWithValue("@marka", laptop.Marka);
+                sql.Parameters.AddWithValue("@model", laptop.Modell);
+                sql.Parameters.AddWithValue("@szin", laptop.Szin);
+                sql.Parameters.AddWithValue("@processzor", laptop.Processzor);
+                sql.Parameters.AddWithValue("@memoria", laptop.Memoria);
+                sql.Parameters.AddWithValue("@kepernyomeret", laptop.Kepernyomeret);
+                sql.Parameters.AddWithValue("@felbontas", laptop.Felbontas);
+                sql.Parameters.AddWithValue("@merevlemezkapacitas", laptop.Merevlemezkapacitas);
+                sql.Parameters.AddWithValue("@ar", laptop.Ar);
+                sql.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                kapcsolatcsuk();
+            }
+        }
     }
 }

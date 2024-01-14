@@ -110,6 +110,7 @@
             this.eladásToolStripMenuItem.Name = "eladásToolStripMenuItem";
             this.eladásToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.eladásToolStripMenuItem.Text = "Eladás";
+            this.eladásToolStripMenuItem.Click += new System.EventHandler(this.eladásToolStripMenuItem_Click);
             // 
             // beállításokToolStripMenuItem
             // 

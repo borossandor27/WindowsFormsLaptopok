@@ -23,6 +23,7 @@ namespace WindowsFormsLaptopok
         {
             comboBox_Valuta.DataSource = Program.rates.Keys.ToList(); // a rates Dictionary kulcsait listába tesszük és ezt adjuk a comboBox_Valuta DataSource-jának
             comboBox_Valuta.SelectedItem = "HUF"; // a comboBox_Valuta alapértelmezett értéke a HUF lesz
+            label_EUR.Text = "EUR " + "\u2192"; // a label_EUR szövege az EUR+nyilat fogja tartalmazni
             switch (operation)
             {
                 case "add":
@@ -65,6 +66,21 @@ namespace WindowsFormsLaptopok
             pictureBox_Laptopkep.Image = laptop.getKep();
             pictureBox_Laptopkep.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+        private Laptop createLaptop()
+        {
+            Laptop laptop = new Laptop();
+            laptop.Marka = textBox_Marka.Text;
+            laptop.Modell = textBox_Model.Text;
+            laptop.Szin = textBox_Szin.Text;
+            laptop.Processzor = textBox_Processzor.Text;
+            laptop.Memoria = (int)numericUpDown_Memoria.Value;
+            laptop.Kepernyomeret =(int) numericUpDown_Kepernyomeret.Value;
+            laptop.Felbontas = textBox_Felbontas.Text;
+            laptop.Merevlemezkapacitas = (int)numericUpDown_Merevlemez.Value;
+            laptop.Ar = numericUpDown_Ar.Value;
+           
+            return laptop;
+        }
         private void button_delete_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -72,12 +88,16 @@ namespace WindowsFormsLaptopok
 
         private void button_edit_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Laptop laptop=createLaptop();
+            Program.adatbazis.updateLaptop(laptop);
+            this.Close();
         }
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Laptop laptop = createLaptop();
+            Program.adatbazis.addLaptop(laptop);
+            this.Close();
         }
 
         private void numericUpDown_Ar_ValueChanged(object sender, EventArgs e)

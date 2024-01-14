@@ -28,6 +28,7 @@ namespace WindowsFormsLaptopok
                 CheckBox cb = new CheckBox();
                 cb.Text = gyarto;
                 cb.AutoSize = true;
+                cb.Checked = true;
                 cb.Location = new System.Drawing.Point(10, 10 + panel_Gyartok.Controls.Count * 20);
                 cb.CheckedChanged += new EventHandler(cb_CheckedChanged);
                 panel_Gyartok.Controls.Add(cb);
@@ -104,6 +105,7 @@ namespace WindowsFormsLaptopok
         {
             FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("add");
             formLaptopAdatok.ShowDialog();
+            updateLaptopListBox();
         }
 
         private void módosítToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +117,7 @@ namespace WindowsFormsLaptopok
             }
             FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("edit");
             formLaptopAdatok.ShowDialog();
+            updateLaptopListBox();
         }
 
         private void törölToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,6 +134,22 @@ namespace WindowsFormsLaptopok
         private void listBox_Laptopok_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             módosítToolStripMenuItem_Click(sender, e);
+        }
+
+        private void eladásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Szöveges fájl|*.txt";
+            saveFileDialog.Title = "Laptop eladás";
+            saveFileDialog.FileName = "eladas.txt";
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string eladottLaptop = "valami szöveg";
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog.FileName))
+                {
+                    file.WriteLine(eladottLaptop);
+                }
+            }
         }
     }
 }

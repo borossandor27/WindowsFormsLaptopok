@@ -45,6 +45,11 @@ namespace WindowsFormsLaptopok
             Ar = ar;
             Modell = modell;
         }
+
+        public Laptop()
+        {
+        }
+
         override public string ToString()
         {
             return $"{Marka} {Modell} ({this.ar})";

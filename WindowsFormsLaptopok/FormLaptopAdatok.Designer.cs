@@ -49,7 +49,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown_Merevlemez = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label_EUR = new System.Windows.Forms.Label();
             this.numericUpDown_Ar = new System.Windows.Forms.NumericUpDown();
             this.pictureBox_Laptopkep = new System.Windows.Forms.PictureBox();
             this.numericUpDown_ArOther = new System.Windows.Forms.NumericUpDown();
@@ -76,7 +76,7 @@
             // 
             // textBox_Model
             // 
-            this.textBox_Model.Location = new System.Drawing.Point(511, 69);
+            this.textBox_Model.Location = new System.Drawing.Point(519, 69);
             this.textBox_Model.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Model.Name = "textBox_Model";
             this.textBox_Model.Size = new System.Drawing.Size(310, 28);
@@ -109,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 37);
+            this.label2.Location = new System.Drawing.Point(515, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 22);
             this.label2.TabIndex = 4;
@@ -143,7 +143,7 @@
             // 
             // numericUpDown_Memoria
             // 
-            this.numericUpDown_Memoria.Location = new System.Drawing.Point(511, 150);
+            this.numericUpDown_Memoria.Location = new System.Drawing.Point(519, 150);
             this.numericUpDown_Memoria.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_Memoria.Maximum = new decimal(new int[] {
             1215752192,
@@ -159,7 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(507, 126);
+            this.label5.Location = new System.Drawing.Point(515, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 22);
             this.label5.TabIndex = 6;
@@ -168,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(762, 152);
+            this.label6.Location = new System.Drawing.Point(770, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 22);
             this.label6.TabIndex = 7;
@@ -186,7 +186,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(507, 212);
+            this.label9.Location = new System.Drawing.Point(515, 212);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 22);
             this.label9.TabIndex = 12;
@@ -194,7 +194,7 @@
             // 
             // textBox_Felbontas
             // 
-            this.textBox_Felbontas.Location = new System.Drawing.Point(511, 238);
+            this.textBox_Felbontas.Location = new System.Drawing.Point(519, 238);
             this.textBox_Felbontas.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Felbontas.Name = "textBox_Felbontas";
             this.textBox_Felbontas.Size = new System.Drawing.Size(310, 28);
@@ -237,7 +237,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(276, 295);
+            this.label10.Location = new System.Drawing.Point(276, 287);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 22);
             this.label10.TabIndex = 15;
@@ -286,14 +286,14 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Ár";
             // 
-            // label13
+            // label_EUR
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(442, 394);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 22);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "EUR";
+            this.label_EUR.AutoSize = true;
+            this.label_EUR.Location = new System.Drawing.Point(442, 394);
+            this.label_EUR.Name = "label_EUR";
+            this.label_EUR.Size = new System.Drawing.Size(156, 28);
+            this.label_EUR.TabIndex = 17;
+            this.label_EUR.Text = "EUR ->\\u2190";
             // 
             // numericUpDown_Ar
             // 
@@ -331,7 +331,7 @@
             // 
             // numericUpDown_ArOther
             // 
-            this.numericUpDown_ArOther.Location = new System.Drawing.Point(511, 392);
+            this.numericUpDown_ArOther.Location = new System.Drawing.Point(519, 392);
             this.numericUpDown_ArOther.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_ArOther.Maximum = new decimal(new int[] {
             -1530494976,
@@ -367,7 +367,7 @@
             // comboBox_Valuta
             // 
             this.comboBox_Valuta.FormattingEnabled = true;
-            this.comboBox_Valuta.Location = new System.Drawing.Point(673, 390);
+            this.comboBox_Valuta.Location = new System.Drawing.Point(681, 390);
             this.comboBox_Valuta.Name = "comboBox_Valuta";
             this.comboBox_Valuta.Size = new System.Drawing.Size(121, 30);
             this.comboBox_Valuta.TabIndex = 23;
@@ -376,15 +376,15 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(507, 287);
+            this.label14.Location = new System.Drawing.Point(515, 287);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 28);
+            this.label14.Size = new System.Drawing.Size(44, 22);
             this.label14.TabIndex = 25;
             this.label14.Text = "Szín";
             // 
             // textBox_Szin
             // 
-            this.textBox_Szin.Location = new System.Drawing.Point(511, 319);
+            this.textBox_Szin.Location = new System.Drawing.Point(519, 319);
             this.textBox_Szin.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Szin.Name = "textBox_Szin";
             this.textBox_Szin.Size = new System.Drawing.Size(310, 28);
@@ -402,7 +402,7 @@
             this.Controls.Add(this.numericUpDown_ArOther);
             this.Controls.Add(this.pictureBox_Laptopkep);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label_EUR);
             this.Controls.Add(this.numericUpDown_Ar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -463,7 +463,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericUpDown_Merevlemez;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label_EUR;
         private System.Windows.Forms.NumericUpDown numericUpDown_Ar;
         private System.Windows.Forms.PictureBox pictureBox_Laptopkep;
         private System.Windows.Forms.NumericUpDown numericUpDown_ArOther;
