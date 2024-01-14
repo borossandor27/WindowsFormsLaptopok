@@ -51,6 +51,7 @@
             this.listBox_Laptopok.Name = "listBox_Laptopok";
             this.listBox_Laptopok.Size = new System.Drawing.Size(401, 422);
             this.listBox_Laptopok.TabIndex = 0;
+            this.listBox_Laptopok.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_Laptopok_MouseDoubleClick);
             // 
             // panel_Gyartok
             // 
@@ -86,21 +87,21 @@
             // újToolStripMenuItem
             // 
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.újToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.újToolStripMenuItem.Text = "Új";
             this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // módosítToolStripMenuItem
             // 
             this.módosítToolStripMenuItem.Name = "módosítToolStripMenuItem";
-            this.módosítToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.módosítToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.módosítToolStripMenuItem.Text = "Módosít";
             this.módosítToolStripMenuItem.Click += new System.EventHandler(this.módosítToolStripMenuItem_Click);
             // 
             // törölToolStripMenuItem
             // 
             this.törölToolStripMenuItem.Name = "törölToolStripMenuItem";
-            this.törölToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.törölToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.törölToolStripMenuItem.Text = "Töröl";
             this.törölToolStripMenuItem.Click += new System.EventHandler(this.törölToolStripMenuItem_Click);
             // 
@@ -135,7 +136,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "Váélasztható laptopok";
+            this.Text = "Választható laptopok";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -145,8 +146,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox_Laptopok;
         private System.Windows.Forms.Panel panel_Gyartok;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem laptopToolStripMenuItem;
@@ -156,6 +155,7 @@
         private System.Windows.Forms.ToolStripMenuItem eladásToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beállításokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valutaToolStripMenuItem;
+        public System.Windows.Forms.ListBox listBox_Laptopok;
     }
 }
 

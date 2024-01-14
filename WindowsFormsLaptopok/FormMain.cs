@@ -12,7 +12,6 @@ namespace WindowsFormsLaptopok
 {
     public partial class FormMain : Form
     {
-        public Dictionary<string, double> rates = new Dictionary<string, double>();
         string[] gyartok = Program.laptopok.Select(x => x.Marka).Distinct().ToArray();
         public string baseCurrency { get; set; } = "EUR";
         public FormMain()
@@ -85,7 +84,7 @@ namespace WindowsFormsLaptopok
                     }
 
                     var result = JsonConvert.DeserializeObject<CurrencyConverter>(response);
-                    rates = result.ConversionRates;
+                    Program.rates = result.ConversionRates;
                 }
                 catch (HttpRequestException ex)
                 {
@@ -109,14 +108,29 @@ namespace WindowsFormsLaptopok
 
         private void módosítToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listBox_Laptopok.SelectedIndex < 0)
+            {
+                MessageBox.Show("Nincs kiválasztva laptop!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("edit");
             formLaptopAdatok.ShowDialog();
         }
 
         private void törölToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listBox_Laptopok.SelectedIndex < 0)
+            {
+                MessageBox.Show("Nincs kiválasztva laptop!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FormLaptopAdatok formLaptopAdatok = new FormLaptopAdatok("delete");
             formLaptopAdatok.ShowDialog();
+        }
+
+        private void listBox_Laptopok_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            módosítToolStripMenuItem_Click(sender, e);
         }
     }
 }

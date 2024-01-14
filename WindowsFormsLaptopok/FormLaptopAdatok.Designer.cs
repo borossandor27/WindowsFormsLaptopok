@@ -47,27 +47,29 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDown_Hdd = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_Merevlemez = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDown_Ar = new System.Windows.Forms.NumericUpDown();
             this.pictureBox_Laptopkep = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown_ArHUF = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_ArOther = new System.Windows.Forms.NumericUpDown();
             this.button_operation = new System.Windows.Forms.Button();
+            this.comboBox_Valuta = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_Szin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Memoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Kepernyomeret)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Hdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Merevlemez)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Ar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Laptopkep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArHUF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArOther)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_Marka
             // 
             this.textBox_Marka.Location = new System.Drawing.Point(280, 69);
-            this.textBox_Marka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Marka.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Marka.Name = "textBox_Marka";
             this.textBox_Marka.Size = new System.Drawing.Size(205, 28);
             this.textBox_Marka.TabIndex = 1;
@@ -75,7 +77,7 @@
             // textBox_Model
             // 
             this.textBox_Model.Location = new System.Drawing.Point(511, 69);
-            this.textBox_Model.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Model.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Model.Name = "textBox_Model";
             this.textBox_Model.Size = new System.Drawing.Size(310, 28);
             this.textBox_Model.TabIndex = 2;
@@ -83,13 +85,14 @@
             // numericUpDown_id
             // 
             this.numericUpDown_id.Location = new System.Drawing.Point(5, 74);
-            this.numericUpDown_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown_id.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_id.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
             this.numericUpDown_id.Name = "numericUpDown_id";
+            this.numericUpDown_id.ReadOnly = true;
             this.numericUpDown_id.Size = new System.Drawing.Size(235, 28);
             this.numericUpDown_id.TabIndex = 3;
             this.numericUpDown_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -117,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(48, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 28);
+            this.label3.Size = new System.Drawing.Size(88, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Azonosító";
             // 
@@ -249,26 +252,26 @@
             this.label11.TabIndex = 14;
             this.label11.Text = "GB";
             // 
-            // numericUpDown_Hdd
+            // numericUpDown_Merevlemez
             // 
-            this.numericUpDown_Hdd.Location = new System.Drawing.Point(280, 320);
-            this.numericUpDown_Hdd.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown_Hdd.Maximum = new decimal(new int[] {
+            this.numericUpDown_Merevlemez.Location = new System.Drawing.Point(280, 320);
+            this.numericUpDown_Merevlemez.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown_Merevlemez.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown_Hdd.Minimum = new decimal(new int[] {
+            this.numericUpDown_Merevlemez.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown_Hdd.Name = "numericUpDown_Hdd";
-            this.numericUpDown_Hdd.Size = new System.Drawing.Size(155, 28);
-            this.numericUpDown_Hdd.TabIndex = 13;
-            this.numericUpDown_Hdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_Hdd.ThousandsSeparator = true;
-            this.numericUpDown_Hdd.Value = new decimal(new int[] {
+            this.numericUpDown_Merevlemez.Name = "numericUpDown_Merevlemez";
+            this.numericUpDown_Merevlemez.Size = new System.Drawing.Size(155, 28);
+            this.numericUpDown_Merevlemez.TabIndex = 13;
+            this.numericUpDown_Merevlemez.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_Merevlemez.ThousandsSeparator = true;
+            this.numericUpDown_Merevlemez.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -297,8 +300,8 @@
             this.numericUpDown_Ar.Location = new System.Drawing.Point(280, 392);
             this.numericUpDown_Ar.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_Ar.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1316134912,
+            2328,
             0,
             0});
             this.numericUpDown_Ar.Minimum = new decimal(new int[] {
@@ -316,6 +319,7 @@
             0,
             0,
             0});
+            this.numericUpDown_Ar.ValueChanged += new System.EventHandler(this.numericUpDown_Ar_ValueChanged);
             // 
             // pictureBox_Laptopkep
             // 
@@ -325,35 +329,27 @@
             this.pictureBox_Laptopkep.TabIndex = 19;
             this.pictureBox_Laptopkep.TabStop = false;
             // 
-            // label14
+            // numericUpDown_ArOther
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(673, 394);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 28);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "HUF";
-            // 
-            // numericUpDown_ArHUF
-            // 
-            this.numericUpDown_ArHUF.Location = new System.Drawing.Point(511, 392);
-            this.numericUpDown_ArHUF.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown_ArHUF.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            this.numericUpDown_ArOther.Location = new System.Drawing.Point(511, 392);
+            this.numericUpDown_ArOther.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown_ArOther.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
             0,
             0});
-            this.numericUpDown_ArHUF.Minimum = new decimal(new int[] {
+            this.numericUpDown_ArOther.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown_ArHUF.Name = "numericUpDown_ArHUF";
-            this.numericUpDown_ArHUF.Size = new System.Drawing.Size(155, 28);
-            this.numericUpDown_ArHUF.TabIndex = 20;
-            this.numericUpDown_ArHUF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_ArHUF.ThousandsSeparator = true;
-            this.numericUpDown_ArHUF.Value = new decimal(new int[] {
+            this.numericUpDown_ArOther.Name = "numericUpDown_ArOther";
+            this.numericUpDown_ArOther.ReadOnly = true;
+            this.numericUpDown_ArOther.Size = new System.Drawing.Size(155, 28);
+            this.numericUpDown_ArOther.TabIndex = 20;
+            this.numericUpDown_ArOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_ArOther.ThousandsSeparator = true;
+            this.numericUpDown_ArOther.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -368,21 +364,49 @@
             this.button_operation.Text = "button1";
             this.button_operation.UseVisualStyleBackColor = true;
             // 
+            // comboBox_Valuta
+            // 
+            this.comboBox_Valuta.FormattingEnabled = true;
+            this.comboBox_Valuta.Location = new System.Drawing.Point(673, 390);
+            this.comboBox_Valuta.Name = "comboBox_Valuta";
+            this.comboBox_Valuta.Size = new System.Drawing.Size(121, 30);
+            this.comboBox_Valuta.TabIndex = 23;
+            this.comboBox_Valuta.SelectedIndexChanged += new System.EventHandler(this.comboBox_Valuta_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(507, 287);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 28);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Szín";
+            // 
+            // textBox_Szin
+            // 
+            this.textBox_Szin.Location = new System.Drawing.Point(511, 319);
+            this.textBox_Szin.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Szin.Name = "textBox_Szin";
+            this.textBox_Szin.Size = new System.Drawing.Size(310, 28);
+            this.textBox_Szin.TabIndex = 24;
+            // 
             // FormLaptopAdatok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 531);
-            this.Controls.Add(this.button_operation);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.numericUpDown_ArHUF);
+            this.Controls.Add(this.textBox_Szin);
+            this.Controls.Add(this.comboBox_Valuta);
+            this.Controls.Add(this.button_operation);
+            this.Controls.Add(this.numericUpDown_ArOther);
             this.Controls.Add(this.pictureBox_Laptopkep);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.numericUpDown_Ar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.numericUpDown_Hdd);
+            this.Controls.Add(this.numericUpDown_Merevlemez);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox_Felbontas);
@@ -401,17 +425,17 @@
             this.Controls.Add(this.textBox_Marka);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLaptopAdatok";
             this.Text = "Kiválasztott laptop adatai";
             this.Load += new System.EventHandler(this.FormLaptopAdatok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Memoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Kepernyomeret)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Hdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Merevlemez)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Ar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Laptopkep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArHUF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArOther)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,13 +461,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDown_Hdd;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Merevlemez;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numericUpDown_Ar;
         private System.Windows.Forms.PictureBox pictureBox_Laptopkep;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown_ArHUF;
+        private System.Windows.Forms.NumericUpDown numericUpDown_ArOther;
         private System.Windows.Forms.Button button_operation;
+        private System.Windows.Forms.ComboBox comboBox_Valuta;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox_Szin;
     }
 }

@@ -12,6 +12,8 @@ namespace WindowsFormsLaptopok
         public static List<Laptop> laptopok = new List<Laptop>();
         public static FormMain formMain;
         public static Adatbazis adatbazis;
+        public static Dictionary<string, decimal> rates = new Dictionary<string, decimal>();
+
         static void Main()
         {
             adatbazis = new Adatbazis();

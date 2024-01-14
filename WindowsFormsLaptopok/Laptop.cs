@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +19,7 @@ namespace WindowsFormsLaptopok
         int kepernyomeret; //-- inch-ben
         string felbontas; //-- width x height
         int merevlemezkapacitas; //-- GB-ban
-        int ar; //-- EUR-ban
+        decimal ar; //-- EUR-ban
 
         public ulong LaptopId { get => laptopId; set => laptopId = value; }
         public string Marka { get => marka; set => marka = value; }
@@ -27,10 +29,10 @@ namespace WindowsFormsLaptopok
         public int Kepernyomeret { get => kepernyomeret; set => kepernyomeret = value; }
         public string Felbontas { get => felbontas; set => felbontas = value; }
         public int Merevlemezkapacitas { get => merevlemezkapacitas; set => merevlemezkapacitas = value; }
-        public int Ar { get => ar; set => ar = value; }
+        public decimal Ar { get => ar; set => ar = value; }
         public string Modell { get => modell; set => modell = value; }
 
-        public Laptop(ulong laptopId, string marka, string szin, string processzor, int memoria, int kepernyomeret, string felbontas, int merevlemezkapacitas, int ar, string modell)
+        public Laptop(ulong laptopId, string marka, string szin, string processzor, int memoria, int kepernyomeret, string felbontas, int merevlemezkapacitas, decimal ar, string modell)
         {
             LaptopId = laptopId;
             Marka = marka;
@@ -46,6 +48,15 @@ namespace WindowsFormsLaptopok
         override public string ToString()
         {
             return $"{Marka} {Modell} ({this.ar})";
+        }
+        public decimal getArOther(string valutaNem = "HUF")
+        {
+            return (decimal)this.ar * Program.rates[valutaNem];
+        }
+
+        internal Image getKep()
+        {
+            return Image.FromFile($"images{Path.DirectorySeparatorChar}HP Pavilion Intel Core i5.png");
         }
     }
 }

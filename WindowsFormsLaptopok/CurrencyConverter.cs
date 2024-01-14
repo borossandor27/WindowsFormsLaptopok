@@ -42,7 +42,7 @@ namespace WindowsFormsLaptopok
         public string BaseCode { get; set; } = "EUR";
 
         [JsonProperty("conversion_rates")]
-        public Dictionary<string, double> ConversionRates { get; set; }
+        public Dictionary<string, decimal> ConversionRates { get; set; }
     }
 
     public partial class CurrencyConverter
